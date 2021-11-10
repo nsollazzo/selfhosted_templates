@@ -72,5 +72,193 @@
         "description": "Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes."
       }
     ]
+  },
+  {
+    "type": 1,
+    "title": "Prowlarr",
+    "name": "prowlarr",
+    "description": "Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps. Prowlarr supports both Torrent Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr, Lidarr, and Readarr offering complete management of your indexers with no per app Indexer setup required (we do it all).",
+    "logo": "https://prowlarr.com/logo/256.png",
+    "image": "linuxserver/prowlarr:develop",
+    "categories": ["Downloaders", "Tools"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "9696:9696/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config/Prowlarr"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID",
+        "description": "for GroupID"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID",
+        "description": "for UserID"
+      },
+      {
+        "name": "TZ",
+        "label": "TZ",
+        "default": "!TZ",
+        "description": "Timezone"
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "DelugeVPN",
+    "name": "delugevpn",
+    "description": "DelugeVPN is a Docker build script for Arch Linux base with Deluge, Privoxy and OpenVPN all included in one image.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Deluge-Logo.svg/1200px-Deluge-Logo.svg.png",
+    "image": "ghcr.io/binhex/arch-delugevpn",
+    "categories": ["Downloaders", "Tools"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "8112:8112/tcp",
+        "Privoxy": "8118:8118/tcp",
+        "51413": "51413:51413/tcp",
+        "51413u": "51413:51413/udp",
+        "58846": "58846:58846/tcp",
+        "58946": "58946:58946/tcp",
+        "6881": "6881:6881/tcp",
+        "6881u": "6881:6881/udp"
+
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config/Prowlarr"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID",
+        "description": "for GroupID"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID",
+        "description": "for UserID"
+      },
+      {
+        "name": "TZ",
+        "label": "TZ",
+        "default": "!TZ",
+        "description": "Timezone"
+      },
+      {
+        "name": "Enable VPN",
+        "label": "VPN_ENABLED",
+        "default": "",
+        "description": "<yes|no>"
+      },
+      {
+        "name": "VPN Username",
+        "label": "VPN_USER",
+        "default": "",
+        "description": "<vpn username>"
+      },
+      {
+        "name": "VPN Password",
+        "label": "VPN_PASS",
+        "default": "",
+        "description": "<vpn password>"
+      },
+      {
+        "name": "VPN Provider",
+        "label": "VPN_PROV",
+        "default": "",
+        "description": "<pia|airvpn|custom>"
+      },
+      {
+        "name": "VPN Client",
+        "label": "VPN_CLIENT",
+        "default": "",
+        "description": "<openvpn|wireguard>"
+      },
+      {
+        "name": "VPN Options",
+        "label": "VPN_OPTIONS",
+        "default": "",
+        "description": "<additional openvpn cli options>"
+      },
+      {
+        "name": "Strict Port Forward",
+        "label": "STRICT_PORT_FORWARD",
+        "default": "",
+        "description": "<yes|no>"
+      },
+      {
+        "name": "Enable Privoxy",
+        "label": "ENABLE_PRIVOXY",
+        "default": "",
+        "description": "<yes|no>"
+      },
+      {
+        "name": "LAN Network",
+        "label": "LAN_NETWORK",
+        "default": "",
+        "description": "<lan ipv4 network>/<cidr notation>"
+      },
+      {
+        "name": "Name Servers",
+        "label": "NAME_SERVERS",
+        "default": "",
+        "description": "<name server ip(s)>"
+      },
+      {
+        "name": "Deluge Daemon Log Level",
+        "label": "DELUGE_DAEMON_LOG_LEVEL",
+        "default": "info",
+        "description": "<info|warning|error|none|debug|trace|garbage>"
+      },
+      {
+        "name": "Deluge Web Log Level",
+        "label": "DELUGE_WEB_LOG_LEVEL",
+        "default": "warning",
+        "description": "<info|warning|error|none|debug|trace|garbage>"
+      },
+      {
+        "name": "VPN Input Ports",
+        "label": "VPN_INPUT_PORTS",
+        "default": "",
+        "description": "<port number(s)>"
+      },
+      {
+        "name": "VPN Output Ports",
+        "label": "VPN_OUTPUT_PORTS",
+        "default": "",
+        "description": "<port number(s)>"
+      },
+      {
+        "name": "DEBUG",
+        "label": "DEBUG",
+        "default": "false",
+        "description": "<true|false>"
+      },
+      {
+        "name": "UMASK",
+        "label": "UMASK",
+        "default": "000",
+        "description": "<umask for created files>"
+      }
+    ]
   }
 ]
