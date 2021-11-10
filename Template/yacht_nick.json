@@ -141,7 +141,7 @@
     "volumes": [
       {
         "container": "/config",
-        "bind": "!config/Deluge"
+        "bind": "!config/DelugeVPN"
       },
       {
         "container": "/downloads",
@@ -176,86 +176,86 @@
         "description": "Timezone"
       },
       {
-        "name": "Enable VPN",
-        "label": "VPN_ENABLED",
+        "name": "VPN_ENABLED",
+        "label": "Enable VPN",
         "default": "",
         "description": "<yes|no>"
       },
       {
-        "name": "VPN Username",
-        "label": "VPN_USER",
+        "name": "VPN_USER",
+        "label": "VPN Username",
         "default": "",
         "description": "<vpn username>"
       },
       {
-        "name": "VPN Password",
-        "label": "VPN_PASS",
+        "name": "VPN_PASS",
+        "label": "VPN Password",
         "default": "",
         "description": "<vpn password>"
       },
       {
-        "name": "VPN Provider",
-        "label": "VPN_PROV",
+        "name": "VPN_PROV",
+        "label": "VPN Provider",
         "default": "",
         "description": "<pia|airvpn|custom>"
       },
       {
-        "name": "VPN Client",
-        "label": "VPN_CLIENT",
+        "name": "VPN_CLIENT",
+        "label": "VPN Client",
         "default": "",
         "description": "<openvpn|wireguard>"
       },
       {
-        "name": "VPN Options",
-        "label": "VPN_OPTIONS",
+        "name": "VPN_OPTIONS",
+        "label": "VPN Options",
         "default": "",
         "description": "<additional openvpn cli options>"
       },
       {
-        "name": "Strict Port Forward",
-        "label": "STRICT_PORT_FORWARD",
+        "name": "STRICT_PORT_FORWARD",
+        "label": "Strict Port Forward",
         "default": "",
         "description": "<yes|no>"
       },
       {
-        "name": "Enable Privoxy",
-        "label": "ENABLE_PRIVOXY",
+        "name": "ENABLE_PRIVOXY",
+        "label": "Enable Privoxy",
         "default": "",
         "description": "<yes|no>"
       },
       {
-        "name": "LAN Network",
-        "label": "LAN_NETWORK",
+        "name": "LAN_NETWORK",
+        "label": "LAN Network",
         "default": "",
         "description": "<lan ipv4 network>/<cidr notation>"
       },
       {
-        "name": "Name Servers",
-        "label": "NAME_SERVERS",
+        "name": "NAME_SERVERS",
+        "label": "Name Servers",
         "default": "",
         "description": "<name server ip(s)>"
       },
       {
-        "name": "Deluge Daemon Log Level",
-        "label": "DELUGE_DAEMON_LOG_LEVEL",
+        "name": "DELUGE_DAEMON_LOG_LEVEL",
+        "label": "Deluge Daemon Log Level",
         "default": "info",
         "description": "<info|warning|error|none|debug|trace|garbage>"
       },
       {
-        "name": "Deluge Web Log Level",
-        "label": "DELUGE_WEB_LOG_LEVEL",
+        "name": "DELUGE_WEB_LOG_LEVEL",
+        "label": "Deluge Web Log Level",
         "default": "warning",
         "description": "<info|warning|error|none|debug|trace|garbage>"
       },
       {
-        "name": "VPN Input Ports",
-        "label": "VPN_INPUT_PORTS",
+        "name": "VPN_INPUT_PORTS",
+        "label": "VPN Input Ports",
         "default": "",
         "description": "<port number(s)>"
       },
       {
-        "name": "VPN Output Ports",
-        "label": "VPN_OUTPUT_PORTS",
+        "name": "VPN_OUTPUT_PORTS",
+        "label": "VPN Output Ports",
         "default": "",
         "description": "<port number(s)>"
       },
