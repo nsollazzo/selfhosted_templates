@@ -1,0 +1,76 @@
+[
+  {
+    "type": 1,
+    "title": "Plex",
+    "name": "plex",
+    "description": "Your favorite movies, TV, music, web shows, podcasts, and more, all streamed to your favorite screens.",
+    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/plex-icon.png",
+    "image": "linuxserver/plex:latest",
+    "network": "host",
+    "categories": ["Video", "Music", "Photos"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "32400:32400/tcp",
+        "DNLA": "1900:1900/udp",
+        "Companion": "3005:3005/tcp",
+        "Bonjour/Avahi": "5353:5353/udp",
+        "Roku Control": "8324:8324/tcp",
+        "GDM-1": "32410:32410/udp",
+        "GDM-2": "32412:32412/udp",
+        "GDM-3": "32413:32413/udp",
+        "GDM-4": "32414:32414/udp",
+        "DNLA TCP": "32469:32469/udp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config/Plex"
+      },
+      {
+        "container": "/tv",
+        "bind": "!tv"
+      },
+      {
+        "container": "/movies",
+        "bind": "!movies"
+      },
+      {
+        "container": "/anime",
+        "bind": "!anime"
+      },
+      {
+        "container": "/cartoons",
+        "bind": "!cartoons"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID",
+        "description": "for GroupID"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID",
+        "description": "for UserID"
+      },
+      {
+        "name": "VERSION",
+        "label": "VERSION",
+        "default": "docker",
+        "description": "Set whether to update plex or not - see Application Setup section."
+      },
+      {
+        "name": "PLEX_CLAIM",
+        "label": "PLEX_CLAIM",
+        "default": "",
+        "description": "Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes."
+      }
+    ]
+  }
+]
