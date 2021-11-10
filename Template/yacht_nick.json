@@ -145,7 +145,7 @@
       },
       {
         "container": "/downloads",
-        "bind": "!config/DelugeVPN"
+        "bind": "!downloads"
       },
       {
         "container": "/config/openvpn",
