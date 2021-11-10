@@ -141,7 +141,19 @@
     "volumes": [
       {
         "container": "/config",
-        "bind": "!config/Prowlarr"
+        "bind": "!config/Deluge"
+      },
+      {
+        "container": "/downloads",
+        "bind": "!config/DelugeVPN"
+      },
+      {
+        "container": "/config/openvpn",
+        "bind": "!config/DelugeVPN/openvpn"
+      },
+      {
+        "container": "/config/wireguard",
+        "bind": "!config/DelugeVPN/wireguard"
       }
     ],
     "env": [
