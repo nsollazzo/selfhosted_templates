@@ -277,10 +277,10 @@
     "type": 1,
     "title": "Readarr",
     "name": "readarr",
-    "description": "",
+    "description": "Book Manager and Automation (Sonarr for Ebooks)",
     "logo": "https://readarr.com/logo/readarr-256.png",
     "image": "linuxserver/readarr:develop",
-    "categories": ["Downloaders", "Tools"],
+    "categories": ["Downloaders", "Tools", "Books"],
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
@@ -292,6 +292,59 @@
       {
         "container": "/config",
         "bind": "!config/Readarr"
+      },
+      {
+        "container": "/books",
+        "bind": "!books"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID",
+        "description": "for GroupID"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID",
+        "description": "for UserID"
+      },
+      {
+        "name": "TZ",
+        "label": "TZ",
+        "default": "!TZ",
+        "description": "Timezone"
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Calibre",
+    "name": "calibre",
+    "description": "Calibre is a powerful and easy to use e-book manager. Users say it’s outstanding and a must-have. It’ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It’s also completely free and open source and great for both casual users and computer experts.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Calibre_logo_3.png/600px-Calibre_logo_3.png",
+    "image": "linuxserver/calibre",
+    "categories": ["Downloaders", "Tools", "Books"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "8080:8080/tcp"
+      },
+      {
+        "WebserverUI": "8081:8081/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config/Calibre"
+      },
+      {
+        "container": "/books",
+        "bind": "!books"
       }
     ],
     "env": [
