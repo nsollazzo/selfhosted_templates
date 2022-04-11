@@ -272,5 +272,47 @@
         "description": "<umask for created files>"
       }
     ]
+  },
+  {
+    "type": 1,
+    "title": "Readarr",
+    "name": "readarr",
+    "description": "",
+    "logo": "https://readarr.com/logo/readarr-256.png",
+    "image": "linuxserver/readarr:develop",
+    "categories": ["Downloaders", "Tools"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "8787:8787/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config/Readarr"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID",
+        "description": "for GroupID"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID",
+        "description": "for UserID"
+      },
+      {
+        "name": "TZ",
+        "label": "TZ",
+        "default": "!TZ",
+        "description": "Timezone"
+      }
+    ]
   }
 ]
