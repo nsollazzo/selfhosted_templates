@@ -323,7 +323,7 @@
     "type": 1,
     "title": "Calibre",
     "name": "calibre",
-    "description": "Calibre is a powerful and easy to use e-book manager. Users say it’s outstanding and a must-have. It’ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It’s also completely free and open source and great for both casual users and computer experts.",
+    "description": "Calibre is a powerful and easy to use e-book manager. Users say it's outstanding and a must-have. It'll allow you to do nearly everything and it takes things a step beyond normal e-book software. It's also completely free and open source and great for both casual users and computer experts.",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Calibre_logo_3.png/600px-Calibre_logo_3.png",
     "image": "linuxserver/calibre",
     "categories": ["Downloaders", "Tools", "Books"],
